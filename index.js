@@ -86,9 +86,12 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
- }
+function addFlavor(arr, str){
+  const newArray = [...arr];
+  newArray.unshift(str);
+  return newArray;
+}
+
 
 
 
@@ -104,8 +107,9 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arr){
+  arr.pop();
+  return arr;
 }
 
 
@@ -122,8 +126,8 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, num){
+  return arr[num];
 }
 
 
@@ -142,8 +146,15 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arr, flavor){
+  for(let i = 0; i < 1; i++){
+    if(arr.indexOf(flavor) === -1){
+      i--;
+    } else {
+      arr.splice(arr.indexOf(flavor), 1);
+    }
+  }
+  return arr;
 }
 
 
@@ -167,10 +178,17 @@ Use the filterByWord function below to do the following:
 */
 
 
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arr, str){
+  const newArray = [];
+  for(let i = 0; i < arr.length; i++){
+    if(!arr[i].includes(str)){
+      continue;
+    } else {
+      newArray.push(arr[i]);
+    }
+  }
+  return newArray;
 }
-
 
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
